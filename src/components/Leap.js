@@ -30,7 +30,7 @@ const Leap = ({ leaps, leap, index }) => {
             <Typography color="textSecondary">
               {`Start: ${leap.start.format("DD.MM.YYYY")} (${
                 leap.daysLeft
-              } Days)`}
+              } Days left)`}
             </Typography>
             <Typography color="textSecondary">
               {`End: ${leap.end.format("DD.MM.YYYY")}`}
