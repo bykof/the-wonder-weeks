@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Timeline } from "@mui/lab";
 import calculateLeaps from "../utils/leaps";
 import { DatePicker } from "@mui/x-date-pickers";
-import { Container, TextField, Typography } from "@mui/material";
+import { Box, Container, Stack, TextField, Typography } from "@mui/material";
 import Leap from "./Leap";
 
 const LeapCalculator = () => {
@@ -32,11 +32,33 @@ const LeapCalculator = () => {
         renderInput={(params) => <TextField fullWidth {...params} />}
       />
       {leaps.length > 0 && (
-        <Timeline position="alternate" sx={{ marginTop: 4 }}>
+        <Timeline
+          position="alternate"
+          sx={{ marginTop: 4, display: { xs: "none", md: "block" } }}
+        >
           {leaps.map((leap, index) => (
-            <Leap key={index} leap={leap} leaps={leaps} index={index} />
+            <Leap
+              key={index}
+              leap={leap}
+              leaps={leaps}
+              index={index}
+              asTimelineItem={true}
+            />
           ))}
         </Timeline>
+      )}
+      {leaps.length > 0 && (
+        <Stack spacing={2} sx={{ marginTop: 4, display: { xs: "block", md: "none" } }}>
+          {leaps.map((leap, index) => (
+            <Leap
+              key={index}
+              leap={leap}
+              leaps={leaps}
+              index={index}
+              asTimelineItem={false}
+            />
+          ))}
+        </Stack>
       )}
     </Container>
   );
