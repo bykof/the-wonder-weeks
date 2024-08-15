@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Timeline } from "@mui/lab";
 import calculateLeaps from "../utils/leaps";
 import { DatePicker } from "@mui/x-date-pickers";
-import { Box, Container, Stack, TextField, Typography } from "@mui/material";
+import { Container, Stack, TextField, Typography } from "@mui/material";
 import Leap from "./Leap";
 
 const LeapCalculator = () => {
