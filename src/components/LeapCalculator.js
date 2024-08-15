@@ -1,21 +1,9 @@
 import React, { useState } from "react";
-import {
-  Timeline,
-  TimelineItem,
-  TimelineSeparator,
-  TimelineConnector,
-  TimelineContent,
-  TimelineDot,
-} from "@mui/lab";
+import { Timeline } from "@mui/lab";
 import calculateLeaps from "../utils/leaps";
 import { DatePicker } from "@mui/x-date-pickers";
-import {
-  Card,
-  CardContent,
-  Container,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Container, TextField, Typography } from "@mui/material";
+import Leap from "./Leap";
 
 const LeapCalculator = () => {
   const [birthdate, setBirthdate] = useState(null);
@@ -46,27 +34,7 @@ const LeapCalculator = () => {
       {leaps.length > 0 && (
         <Timeline position="alternate" sx={{ marginTop: 4 }}>
           {leaps.map((leap, index) => (
-            <TimelineItem key={index}>
-              <TimelineSeparator>
-                <TimelineDot color="primary" />
-                {index < leaps.length - 1 && <TimelineConnector />}
-              </TimelineSeparator>
-              <TimelineContent>
-                <Card variant="outlined">
-                  <CardContent>
-                    <Typography variant="h6">{`Leap #${index + 1}`}</Typography>
-                    <Typography color="textSecondary">
-                      {`Start: ${leap.start.format("DD.MM.YYYY")} (${
-                        leap.daysLeft
-                      } Days)`}
-                    </Typography>
-                    <Typography color="textSecondary">
-                      {`End: ${leap.end.format("DD.MM.YYYY")}`}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </TimelineContent>
-            </TimelineItem>
+            <Leap key={index} leap={leap} leaps={leaps} index={index} />
           ))}
         </Timeline>
       )}
