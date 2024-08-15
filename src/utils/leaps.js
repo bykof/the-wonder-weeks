@@ -60,7 +60,7 @@ const calculateLeaps = (birthdate) => {
       start,
       end,
       special: week.special,
-      daysLeft: dayjs(end).diff(dayjs(), "days"),
+      daysLeft: dayjs(start).diff(dayjs(), "days"),
     };
   });
 };
