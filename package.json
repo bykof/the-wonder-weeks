@@ -4,6 +4,7 @@
   "author": {
     "name": "Michael Bykovski"
   },
+  "homepage": "https://bykof.github.io/the-wonder-weeks/",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.13.0",
