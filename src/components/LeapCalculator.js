@@ -31,8 +31,11 @@ const LeapCalculator = () => {
 
   return (
     <Container maxWidth="md" sx={{ marginTop: 5 }}>
-      <Typography variant="h4" gutterBottom>
-        Oje, ich wachse! Sprünge berechnen
+      <Typography variant="h3" gutterBottom>
+        The Wonder Weeks Calcutor Free
+      </Typography>
+      <Typography variant="h5" gutterBottom>
+        Enter the calculated date of birth of your child
       </Typography>
       <DatePicker
         label="Geburtsdatum auswählen"
@@ -51,16 +54,14 @@ const LeapCalculator = () => {
               <TimelineContent>
                 <Card variant="outlined">
                   <CardContent>
-                    <Typography variant="h6">{`Sprung #${
-                      index + 1
-                    }`}</Typography>
+                    <Typography variant="h6">{`Leap #${index + 1}`}</Typography>
                     <Typography color="textSecondary">
-                      {`Beginn: ${leap.start.format("DD.MM.YYYY")} (${
+                      {`Start: ${leap.start.format("DD.MM.YYYY")} (${
                         leap.daysLeft
-                      } Tage)`}
+                      } Days)`}
                     </Typography>
                     <Typography color="textSecondary">
-                      {`Ende: ${leap.end.format("DD.MM.YYYY")}`}
+                      {`End: ${leap.end.format("DD.MM.YYYY")}`}
                     </Typography>
                   </CardContent>
                 </Card>
