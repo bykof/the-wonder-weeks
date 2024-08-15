@@ -1,11 +1,21 @@
 {
-  "name": "oje-ich-wachse",
+  "name": "the-wonder-weeks",
   "version": "0.1.0",
-  "private": true,
+  "author": {
+    "name": "Michael Bykovski"
+  },
+  "private": false,
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^5.16.7",
+    "@mui/lab": "^5.0.0-alpha.173",
+    "@mui/material": "^5.16.7",
+    "@mui/x-date-pickers": "^7.12.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "dayjs": "^1.11.12",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
