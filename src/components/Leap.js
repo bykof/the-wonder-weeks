@@ -21,7 +21,9 @@ const Leap = ({ leaps, leap, index, asTimelineItem }) => {
   const card = (
     <Card variant="outlined">
       <CardContent>
-        <Typography variant="h6">{`Leap #${index + 1}`}</Typography>
+        <Typography variant="h6">
+          {leap.number ? `Leap #${leap.number}` : `Shallow Leap`}
+        </Typography>
         <Typography color="textSecondary">
           {`Start: ${leap.start.format("DD.MM.YYYY")} (${
             leap.daysLeft
@@ -34,7 +36,11 @@ const Leap = ({ leaps, leap, index, asTimelineItem }) => {
           control={<Switch value={showInfo} onChange={toggleInfo} />}
           label="Show info"
         />
-        {showInfo && <Alert severity="info">{leap.info}</Alert>}
+        {showInfo && (
+          <Alert severity="info" sx={{ textAlign: "justify" }}>
+            {leap.info}
+          </Alert>
+        )}
       </CardContent>
     </Card>
   );
