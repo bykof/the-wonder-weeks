@@ -35,10 +35,10 @@ const LeapCalculator = () => {
         The Wonder Weeks Calcutor Free
       </Typography>
       <Typography variant="h5" gutterBottom>
-        Enter the calculated date of birth of your child
+        Enter the calculated date of birth of your child (by your doctor)
       </Typography>
       <DatePicker
-        label="Geburtsdatum auswählen"
+        label="Calculated Date of birth"
         value={birthdate}
         onChange={handleDateChange}
         renderInput={(params) => <TextField fullWidth {...params} />}
