@@ -20,7 +20,7 @@ const LeapCalculator = () => {
   return (
     <Container maxWidth="md" sx={{ marginTop: 5 }}>
       <Typography variant="h3" gutterBottom>
-        The Wonder Weeks Calcutor Free
+        The Wonder Weeks Calculator Free
       </Typography>
       <Typography variant="h5" gutterBottom>
         Enter the calculated date of birth of your child (by your doctor)
