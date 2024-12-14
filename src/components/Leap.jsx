@@ -4,7 +4,7 @@ import {
   TimelineDot,
   TimelineItem,
   TimelineSeparator,
-} from "@mui/lab";
+} from '@mui/lab'
 import {
   Alert,
   Card,
@@ -12,38 +12,44 @@ import {
   FormControlLabel,
   Switch,
   Typography,
-} from "@mui/material";
-import { useToggle } from "@uidotdev/usehooks";
+} from '@mui/material'
+import { useToggle } from '@uidotdev/usehooks'
+import { useTranslation } from 'react-i18next'
 
 const Leap = ({ leaps, leap, index, asTimelineItem }) => {
-  const [showInfo, toggleInfo] = useToggle(false);
+  const { t } = useTranslation()
+  const [showInfo, toggleInfo] = useToggle(false)
 
   const card = (
     <Card variant="outlined">
       <CardContent>
         <Typography variant="h6">
-          {leap.number ? `Leap #${leap.number}` : `Shallow Leap`}
+          {leap.number
+            ? `${t('leap.title')} #${leap.number}`
+            : t('leap.shallowLeap.title')}
         </Typography>
         <Typography color="textSecondary">
-          {`Start: ${leap.start.format("DD.MM.YYYY")} (${
+          {`${t('leap.start')}: ${leap.start.format('L')} (${
             leap.daysLeft
-          } Days left)`}
+          } ${t('leap.daysLeft')})`}
         </Typography>
         <Typography color="textSecondary">
-          {`End: ${leap.end.format("DD.MM.YYYY")}`}
+          {`${t('leap.end')}: ${leap.end.format('L')}`}
         </Typography>
         <FormControlLabel
           control={<Switch value={showInfo} onChange={toggleInfo} />}
-          label="Show info"
+          label={t('leap.showInfo')}
         />
         {showInfo && (
-          <Alert severity="info" sx={{ textAlign: "justify" }}>
-            {leap.info}
+          <Alert severity="info" sx={{ textAlign: 'justify' }}>
+            {leap.number
+              ? t(`leap.info.${leap.number}`)
+              : t('leap.info.shallowLeap')}
           </Alert>
         )}
       </CardContent>
     </Card>
-  );
+  )
 
   if (asTimelineItem) {
     return (
@@ -54,10 +60,10 @@ const Leap = ({ leaps, leap, index, asTimelineItem }) => {
         </TimelineSeparator>
         <TimelineContent>{card}</TimelineContent>
       </TimelineItem>
-    );
+    )
   }
 
-  return card;
-};
+  return card
+}
 
-export default Leap;
+export default Leap
