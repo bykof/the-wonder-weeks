@@ -39,11 +39,6 @@ const LeapCalculator = () => {
         </Grid>
       </Grid>
       <Box height={32} />
-      <Helmet>
-        <html lang={i18n.resolvedLanguage} />
-        <title>{t('title')}</title>
-        <meta name={'description'} content={t('description')} />
-      </Helmet>
       <Grid container spacing={2}>
         <Grid size={12}>
           <Typography variant="h3" gutterBottom>
